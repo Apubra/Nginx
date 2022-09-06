@@ -5,7 +5,8 @@ sudo apt install nginx
 sudo nano /etc/nginx/sites-available/default
 
 Default settings:
-server_name yourdomain.com www.yourdomain.com;
+server {
+    server_name cryptography.iare.network www.cryptography.iare.network;
 
     location / {
         proxy_pass http://localhost:5000; #whatever port your app runs on
@@ -15,6 +16,7 @@ server_name yourdomain.com www.yourdomain.com;
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
+}
 
 # Check NGINX config
 sudo nginx -t
