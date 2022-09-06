@@ -40,3 +40,11 @@ Finally, test your Nginx configuration changes and restart the web server.
 
 nginx -t
 systemctl restart nginx
+
+You can get an error. Because of maybe your port 80 already running.
+So, run the following command:
+sudo fuser -k 80/tcp
+sudo fuser -k 443/tcp
+
+Then execute,
+sudo service nginx restart
