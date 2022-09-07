@@ -21,7 +21,15 @@ server {
 # Check NGINX config
 sudo nginx -t
 
-# Restart NGINX
+# Start Restart Stop NGINX
+
+sudo systemctl start nginx 
+sudo systemctl stop nginx 
+sudo systemctl restart nginx
+
+
+sudo service nginx start
+sudo service nginx stop
 sudo service nginx restart
 
 # Reverse Proxy for many domains(IP)
